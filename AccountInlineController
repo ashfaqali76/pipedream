@@ -1,0 +1,11 @@
+public class AccountInlineController {
+	@AuraEnabled
+    public static List<Account> getAllAccounts(){
+        return [SELECT Id, Name, AnnualRevenue, Industry, Rating, Phone FROM Account] ; 
+        
+    }
+    @AuraEnabled
+    public static void updateAccount(List<Account> acc ){
+        update acc;
+    }
+}
